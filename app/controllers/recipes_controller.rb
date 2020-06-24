@@ -5,6 +5,10 @@ class RecipesController < ApplicationController
 
     def show
         @recipe = Recipe.find(params[:id])
+    end                                                                                                                                                                                                                                                                                                                                                                             
+
+    def random
+        @recipe = Recipe.all.shuffle[0]
     end
 
     def new
@@ -16,7 +20,7 @@ class RecipesController < ApplicationController
         @recipe.user = current_user
         @recipe.save
 
-        
+    
     end
 
     def order
@@ -26,7 +30,6 @@ class RecipesController < ApplicationController
     private
     
     def recipe_params
-        params.require(:recipe).permit(:title, :instructions, :prep_time, :vegetarian, :vegan, :gluten_free, :diary_free, :very_healthy, :ketogenic, :servings, :source_url, :summary)
+        params.require(:recipe).permit(:title, :instructions, :prep_time, :vegetarian, :vegan, :gluten_free, :dairy_free, :very_healthy, :ketogenic, :servings, :source_id, :summary)
     end
-
 end
