@@ -1,1 +1,20 @@
-<h1> Create a New Recipe </h1>
+<div class="container">
+	<div class="card">
+		<div class="container-fliud">
+			<div class="wrapper row">
+				<div class="preview col-md-8">
+          <h3> Input Information </h3>
+          <%= simple_form_for @recipe do |r| %>
+            <%= r.input :title %>
+            <%= r.input :instructions %>
+            <%= r.input :prep_time %>
+            <%= r.input :servings %>
+            <%= r.input :summary %>
+            <!-- <%= r.input :photos, as: :file, input_html: { multiple: true } %> -->
+            <%= r.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>   
