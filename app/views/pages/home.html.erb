@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    
+    <% if user_signed_in? %>
+        <%= link_to "Get Started", recipes_path, class: "add-to-cart btn btn-dark" %> 
+    <% else %>
+        <%= link_to "Get Started", random_path(@recipe), class: "add-to-cart btn btn-dark" %>     
+    <% end %>
+                   
+
+</div>
