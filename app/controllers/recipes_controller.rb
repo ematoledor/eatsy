@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
 
     def random
         @recipe = Recipe.all.shuffle[0]
+        redirect_to recipe_path(@recipe)
     end
 
     def new

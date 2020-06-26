@@ -1,0 +1,14 @@
+			<% portions.each do |portion| %>	
+			<div class="row">
+				
+				<div class="col ">
+					<input type="checkbox" aria-label="Checkbox for following text input">
+				</div>
+				<div class="col">
+					<h6><%= portion.ingredient.name %> </h6>
+				</div>
+				<div class="col"><%= portion.ingredient.image %></div>
+				<div class="col"> <%= portion.amount %> </div>
+				<div class="col"> <%= portion.unit %></div>
+			</div>
+			<% end %>
