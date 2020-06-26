@@ -1,18 +1,13 @@
 
 
-  <header class="masthead text-white text-center d-flex justify-content-center align-items-center flex-column">
-      <h1 class="mb-5">EAtSY</h1>
-        <%=link_to "Eat Simple", recipes_path, class: "btn btn-lg btn-primary call-to-action"%>
+<header class="masthead text-white text-center d-flex justify-content-center align-items-center flex-column">
+  <h1 class="mb-5">EAtSY</h1>
           <!-- <div class="overlay"></div> -->
-  </header>
+  <% if user_signed_in? %>
+    <%= link_to "Eat Simple", recipes_path, class: "btn btn-lg btn-primary call-to-action" %>
+  <% else %>
+    <%= link_to "Eat Simple", random_path(@recipe), class: "btn btn-lg btn-primary call-to-action" %>
+  <% end %>
 
-<div class="container">
-    
-    <% if user_signed_in? %>
-        <%= link_to "Get Started", recipes_path, class: "add-to-cart btn btn-dark" %> 
-    <% else %>
-        <%= link_to "Get Started", random_path(@recipe), class: "add-to-cart btn btn-dark" %>     
-    <% end %>
-                   
+</header>
 
-</div>
