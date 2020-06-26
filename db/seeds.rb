@@ -27,6 +27,7 @@ spoonacular_recipes_params.each do |sr_params|
     cheap:        sr_params["cheap"],
     very_popular: sr_params["very_popular"],
     ketogenic:    sr_params["ketogenic"],
+    summary:      sr_params["summary"]
   )
   
   sr_params["extendedIngredients"].each do |ingredient|

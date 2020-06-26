@@ -1,32 +1,28 @@
 <div class="container">
-	<div class="card">
-		<div class="container-fliud">
-			<div class="wrapper row">
-				<div class="preview col-md-6">
-					<div class="preview-pic tab-content">
-                      <div class="tab-pane active" id="pic-1">
-                      </div>
-					</div>
-				</div>
-                    
-				<div class="details col-md-6">
-					<h3 class="recipe-title"><b>Title : </b><%= @recipe.title %></h3>
-				    <p class="recipe-instructions"><b>Instructions : </b><%= @recipe.instructions %></p>
-					<p class="preparation-time"><b>Preparation Time</b><%= @recipe.prep_time %></p>
-                    <p class="servings"><b>Servings</b><%= @recipe.servings %></p>
-                    <p class="summary"><b>Summary</b><%= @recipe.summary %></p>
-                
-					<div class="action">
-						<%= link_to recipes_path do %>
-                            <button class="add-to-cart btn btn-dark" type="button">Back to Recipes</button>
-                        <% end %>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div class="container">
+		<div class="row bg-light">
+     	<img src=<%= @recipe.image %>
+			 <h1><%= @recipe.title %></h1>
+  	</div>
 	</div>
+	<div class="container bg-secondary">
+		<div class="row">
+			<div class="col bg-primary"><%= @recipe.servings %></div>
+			<div class="col bg-primary"><%= @recipe.prep_time %></div>
+			<div class="col bg-primary">Review</div>
+		</div>
+		<div class="row bg-secondary">
+			<div class="col">
+				<%= @recipe.summary %>
+			</div>	
+				
+		</div>
+
+		<div class="row">
+			<div class="col btn btn-primary">Sign Up</div>
+		</div>
 </div>
+
 
 
 
