@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
     def show
         @recipe = Recipe.find(params[:id])
+        @review = Review.where(recipe_id: @recipe.id)
     end                                                                                                                                                                                                                                                                                                                                                                             
 
     def random
