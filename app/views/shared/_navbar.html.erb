@@ -1,10 +1,29 @@
-
+<div class="container button-navbar">
   <div class="row bg-light icons-text">
-    <div class="col-4 d-flex justify-content-center"><%= image_tag "https://api.iconify.design/noto-v1:cooking.svg?width=25&height=25" %></div>
-    <div class="col-4 d-flex justify-content-center"><%= image_tag "https://api.iconify.design/gg:shopping-cart.svg?color=orange&width=50&height=25" %></div>
-    <div class="col-4 d-flex justify-content-center"><%= image_tag "https://api.iconify.design/ic:baseline-account-box.svg?color=orange&width=50&height=25" %></div>
-    <div class="col-4 d-flex justify-content-center">EAtSY</div>
-    <div class="col-4 d-flex justify-content-center">CART</div>
-    <div class="col-4 d-flex justify-content-center">ACCOUNT</div>
+    <div class="col-4 flex-column text-center d-flex justify-content-center">
+      <%= link_to root_path do %>
+        <%= image_tag "https://api.iconify.design/noto-v1:cooking.svg?width=25&height=25" %>
+        <br>
+        EAtSY
+      <% end %>
+    </div>
+
+    <div class="col-4 flex-column text-center d-flex justify-content-center">
+      <%= link_to "#" do %>
+        <%= image_tag "https://api.iconify.design/gg:shopping-cart.svg?color=orange&width=50&height=25" %>
+        <br>
+        CART
+      <% end %>
+    </div>
+
+    <div class="col-4 flex-column text-center d-flex justify-content-center">
+      <%= link_to recipes_path do %>
+        <%= image_tag "https://api.iconify.design/ic:baseline-account-box.svg?color=orange&width=50&height=25" %>
+        <br>
+        ACCOUNT
+      <% end %>
+    </div>
   </div>
+</div>
+
 
