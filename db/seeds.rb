@@ -1,6 +1,4 @@
 
-require 'pry-byebug'
-
 Recipe.destroy_all
 Ingredient.destroy_all
 
