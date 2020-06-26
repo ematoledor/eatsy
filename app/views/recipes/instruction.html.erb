@@ -1,0 +1,63 @@
+<div class="container">
+	<div class="container">
+		<div class="row bg-light">
+     		<h4> Ingredients </h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+	<div class="container">
+		<div class="row bg-light">
+             <% @portions.each do |portion| %>	
+                <div class="row">
+                    <div class="col ">
+                    </div>
+                <div class="col">
+                        <%= portion.ingredient.name %>
+                    </div>
+                </div>
+        	<% end %>
+        </div>
+    </div>
+</div>
+<div class="container">
+	<div class="container">
+		<div class="row bg-light">
+            <table class="table-responsive">
+                <thead>
+                    <tr><th scope="col">Nutritional Information</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Fat - 2.2%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Cholosterol - 2.4%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Saturated fats - 2mg</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+	<div class="container">
+		<div class="row bg-light">
+    		<div class="row">
+			<%= link_to recipes_path do %>
+                <button class="add-to-cart btn btn-dark" type="button">Submit Review</button>
+            <% end %>
+	    	</div>
+	    </div>
+    </div>
+</div>        
+	<div class="container bg-warning">
+	</div>
+	<div class="container">
+	</div>
+</div>

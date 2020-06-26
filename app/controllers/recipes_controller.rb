@@ -29,6 +29,11 @@ class RecipesController < ApplicationController
 
     
     end
+    
+    def instruction
+        @recipe = Recipe.find(params[:id])
+        @portions = Portion.where(recipe_id: @recipe.id)
+    end
 
     def order
 
