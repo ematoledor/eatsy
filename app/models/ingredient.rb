@@ -1,6 +1,6 @@
 class Ingredient < ApplicationRecord
-  belongs_to :portion
-
+  has_many :portions, dependent: :destroy
   validates :name, uniqueness: true
+
 
 end

@@ -1,10 +1,13 @@
 class RecipesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [ :random ]
+
     def index
         @recipes = Recipe.all
     end
 
     def show
         @recipe = Recipe.find(params[:id])
+        @portions = Portion.where(recipe_id: @recipe.id)
     end                                                                                                                                                                                                                                                                                                                                                                             
 
     def random
