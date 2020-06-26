@@ -11,23 +11,14 @@
 			<div class="col bg-primary"><%= @recipe.prep_time %></div>
 			<div class="col bg-primary">Review</div>
 		</div>
-			<% @portions.each do |portion| %>	
-			<div class="row">
-				
-				<div class="col ">
-					<input type="checkbox" aria-label="Checkbox for following text input">
-				</div>
-				<div class="col">
-					<h6><%= portion.ingredient.name %> </h6>
-				</div>
-				<div class="col"><%= portion.ingredient.image %></div>
-				<div class="col"> <%= portion.amount %> </div>
-				<div class="col"> <%= portion.unit %></div>
-			</div>
-			<% end %>
+	  <% if user_signed_in? %>
+			<%= render 'ingredient_selection', portions: @portions %>	
+		<% else %>
+			<%= render 'details', recipe: @recipe %>
+		<% end %>
+
 		<div class="row">
-			<div class="col btn btn-primary">Order Now</div>
-			<div class="col btn btn-secondary">Next</div>
+			<div class="col btn btn-primary">Cook now</div>
 		</div>
 	</div>
 	<div class="container bg-warning">
