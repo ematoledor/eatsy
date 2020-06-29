@@ -32,6 +32,7 @@ spoonacular_recipes_params.each do |sr_params|
     new_ingredient = Ingredient.where(name: ingredient["name"]).first_or_create!  
     new_ingredient.update!(image: ingredient["image"])
 
+  
     Portion.create!(
       amount:       ingredient["amount"],
       unit:         ingredient["unit"],
@@ -39,4 +40,23 @@ spoonacular_recipes_params.each do |sr_params|
       ingredient:   new_ingredient
     )
   end
-end 
+
+  # recipe_source_id = sr_params["id"]
+  # url_nutri = "https://api.spoonacular.com/recipes/#{recipe_source_id}/nutritionWidget.json&apiKey=#{SPOONACULAR_KEY}"
+  # nutri_params = HTTParty.get(url_nutri)
+
+  # nutri_params.each do |attr|
+  #   recipe_id = sr_params["id"]
+  #   recipe = Recipe.find_by(source_id: sr_params["id"])
+    
+  #   binding.pry
+    
+  #   recipe.update!( 
+  #   calories:    attr["calories"],
+  #   carbs:       attr["carbs"],
+  #   fat:         attr["fat"],
+  #   protein:     attr["protein"]
+  #   )
+  # end
+end
+
