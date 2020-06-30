@@ -1,31 +1,36 @@
+
+<link rel="stylesheet" type="text/css" href="show.css" />
+
 <div class="container-fluid">
-	<div class="container-fluid">
-		<div class="row bg-light">
-     	<img class="img-fluid rounded mx-auto d-block"src=<%= @recipe.image %>
-			 <h1><%= @recipe.title %></h1>
-  	</div>
-	</div>
-	<div class="container bg-secondary">
-		<div class="row">
-			<div class="col bg-primary"><%= @recipe.servings %></div>
-			<div class="col bg-primary"><%= @recipe.prep_time %></div>
-			<div class="col bg-primary">Review</div>
+	<div class="row mx-auto">
+		<div class="img_position" style="background-image: url('<%= @recipe.image %>')">
+			<h2 class="text-center font-weight-lighter text-align-justify"><%= @recipe.title %></h2>
 		</div>
-	  <% if user_signed_in? %>
+	</div>
+
+	<div class="container">
+		<div class="row text-center">
+			<div class="col">
+				<p class="recipe_attrs"><%= @recipe.servings %></p>
+			</div>
+			<div class="col">
+				<p class="recipe_attrs"><%= @recipe.prep_time %></p>
+			</div>
+			<div class="col">
+				<p class="recipe_attrs">Review</p>
+			</div>
+		</div>
+		
+		<h4 id="cat-ingredients">What ingredients do you have?</h4>
+	  
+		<% if user_signed_in? %>
 			<%= render 'ingredient_selection', portions: @portions %>	
 		<% else %>
 			<%= render 'details', recipe: @recipe %>
 		<% end %>
 
-		<div class="row">
+		<div class="row d-flex align-items-center">
 			<<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-primary call-to-action" %>
 		</div>
 	</div>
-	<div class="container bg-warning">
-	</div>
-	<div class="container">
-	</div>
 </div>
-
-
-

@@ -9,7 +9,6 @@ recipes_request = HTTParty.get(url)
 spoonacular_recipes_params = recipes_request["recipes"]
 
 spoonacular_recipes_params.each do |sr_params|
-  
   recipe = Recipe.create!(
     title:        sr_params["title"],
     instructions: sr_params["instructions"],
