@@ -1,17 +1,17 @@
 class RecipesController < ApplicationController
-    skip_before_action :authenticate_user!, only: [ :random ]
+  skip_before_action :authenticate_user!, only: [ :random ]
 
-    def index
+  def index
         @recipes = Recipe.all
     end
 
-    def show
+  def show
         @recipe = Recipe.find(params[:id])
 
         @review = Review.where(recipe_id: @recipe.id)
         @portions = Portion.where(recipe_id: @recipe.id)
 
-    end                                                                                                                                                                                                                                                                                                                                                                             
+    end
 
     def random
         @recipe = Recipe.all.shuffle[0]
@@ -27,9 +27,9 @@ class RecipesController < ApplicationController
         @recipe.user = current_user
         @recipe.save
 
-    
+
     end
-    
+
     def instruction
         @recipe = Recipe.find(params[:id])
         @portions = Portion.where(recipe_id: @recipe.id)
@@ -39,8 +39,12 @@ class RecipesController < ApplicationController
 
     end
 
+    def accountsummary
+
+    end
+
     private
-    
+
     def recipe_params
         params.require(:recipe).permit(:title, :instructions, :prep_time, :vegetarian, :vegan, :gluten_free, :dairy_free, :very_healthy, :ketogenic, :servings, :source_id, :summary, images: [])
     end

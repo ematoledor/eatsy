@@ -30,7 +30,9 @@
 		<% end %>
 
 		<div style="height: 50px"class="cook_now">
-			<%= link_to "Cook Now", instruction_path, class: "cook_now_button" %>
+			<%= link_to "Cook Now", instruction_path, class: "cook_now_button", id: "cook-now-button" %>
+      <%= link_to "Order Now", order_path, class: "btn btn-lg btn-primary", id: "order-now-button" %>
 		</div>
 	</div>
 </div>
+

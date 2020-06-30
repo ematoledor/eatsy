@@ -3,7 +3,7 @@
 /* Fontawesome */
 @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 /*Buttons*/
-@import url("components/buttons.css");
+/*@import url("components/buttons.css");*/
 /* Utilities */
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -41,7 +41,8 @@ header.masthead .overlay {
 
 
 header.masthead h1 {
-  font-size: 2rem;
+  font-size: 4rem;
+  text-shadow: #000 1px 0 10px;
 }
 
 
