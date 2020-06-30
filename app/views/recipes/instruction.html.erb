@@ -2,51 +2,54 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
-
-<div class="container-fluid">
-    <div class="container-fluid">
-        <ul class="nav centered">
-        <li class="nav-item active">
-            <a class="nav-link scroll" href="#Ingredients">Ingredients</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scroll" href="#Nutrients">Nutrients</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link scroll" href="#Instructions">Instructions</a>
-        </li>
-       
-    </ul>
-    <div class="jumbotron-fluid text-center one" id="Ingredients">
-        <span class="display-3">Recipe Ingredients</span>
-            <% @portions.each do |portion| %>	
-                <div class="col" >
-                    <%= portion.ingredient.name %>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+            <div class="container-fluid">
+                <ul class="nav centered">
+                    <li class="nav-item active">
+                        <a class="nav-link scroll" href="#Ingredients">Ingredients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#Nutrients">Nutrients</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link scroll" href="#Instructions">Instructions</a>
+                    </li>
+                </ul>
+        
+                <div class="jumbotron-fluid text-center one" id="Ingredients">
+                    <h5>Recipe Ingredients</h5>
+                    <div class="jumbotron-fluid text-left">
+                        <% @portions.each do |portion| %>	
+                            <%= portion.ingredient.name %><span>,</span>
+                        <% end %>
+                    </div>    
                 </div>
-            <% end %>
-    </div>
-    <div class="jumbotron-fluid text-center two" id="Nutrients">
-        <span class="display-3">Nutrients</span>
-            <h5>Calories :<%=@recipe.calories%> </h5>
-            <h5>Carbs :<%=@recipe.carbs%> </h5>
-            <h5>Fat :<%=@recipe.fat%> </h5>
-            <h5>Protein :<%=@recipe.protein%> </h5>
+        
+                <div class="jumbotron-fluid text-center two" id="Nutrients">
+                    <h5>Nutrients</h5>
+                    <div class="jumbotron-fluid text-left">
+                        <p>Calories :<%=@recipe.calories%> </p>
+                        <p>Carbs :<%=@recipe.carbs%> </p>
+                        <p>Fat :<%=@recipe.fat%> </p>
+                        <p>Protein :<%=@recipe.protein%> </p>
+                    </div>
+            </div>
 
+                <div class="jumbotron-fluid text-center three" id="Instructions">
+                    <h5>Instructions</h5>
+                        <div class="jumbotron-fluid text-justify">
+                        <%=@recipe.instructions.html_safe%> 
+                        </div>
+                </div>
+
+                <div class="jumbotron-fluid text-center">
+                    <%= link_to new_recipe_review_path(@recipe) do %>
+                        <button class="add-to-cart btn btn-dark" type="button">Submit Review</button>
+                    <% end %>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="jumbotron-fluid text-center three" id="Instructions">
-        <span class="display-3">Instructions</span>
-            <%=@recipe.instructions.html_safe%> 
-    </div>
-    </div>
-    
-    <div class="container">
-		<div class="row bg-light">
-    		<div class="row">
-			<%= link_to new_recipe_review_path(@recipe) do %>
-                <button class="add-to-cart btn btn-dark" type="button">Submit Review</button>
-            <% end %>
-	    	</div>
-	    </div>
-    </div>    
 </div>
