@@ -1,63 +1,52 @@
-<div class="container">
-	<div class="container">
-		<div class="row bg-light">
-     		<h4> Ingredients </h4>
-        </div>
-    </div>
-</div>
-<div class="container">
-	<div class="container">
-		<div class="row bg-light">
-             <% @portions.each do |portion| %>	
-                <div class="row">
-                    <div class="col ">
-                    </div>
-                <div class="col">
-                        <%= portion.ingredient.name %>
-                    </div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container-fluid">
+    <div class="container-fluid">
+        <ul class="nav centered">
+        <li class="nav-item active">
+            <a class="nav-link scroll" href="#Ingredients">Ingredients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link scroll" href="#Nutrients">Nutrients</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link scroll" href="#Instructions">Instructions</a>
+        </li>
+       
+    </ul>
+    <div class="jumbotron-fluid text-center one" id="Ingredients">
+        <span class="display-3">Recipe Ingredients</span>
+            <% @portions.each do |portion| %>	
+                <div class="col" >
+                    <%= portion.ingredient.name %>
                 </div>
-        	<% end %>
-        </div>
+            <% end %>
     </div>
-</div>
-<div class="container">
-	<div class="container">
-		<div class="row bg-light">
-            <table class="table-responsive">
-                <thead>
-                    <tr><th scope="col">Nutritional Information</th></tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Fat - 2.2%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Cholosterol - 2.4%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Saturated fats - 2mg</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="jumbotron-fluid text-center two" id="Nutrients">
+        <span class="display-3">Nutrients</span>
+            <h5>Calories :<%=@recipe.calories%> </h5>
+            <h5>Carbs :<%=@recipe.carbs%> </h5>
+            <h5>Fat :<%=@recipe.fat%> </h5>
+            <h5>Protein :<%=@recipe.protein%> </h5>
+
     </div>
-</div>
-<div class="container">
-	<div class="container">
+    <div class="jumbotron-fluid text-center three" id="Instructions">
+        <span class="display-3">Instructions</span>
+            <%=@recipe.instructions.html_safe%> 
+    </div>
+    </div>
+    
+    <div class="container">
 		<div class="row bg-light">
     		<div class="row">
-			<%= link_to recipes_path do %>
+			<%= link_to new_recipe_review_path(@recipe) do %>
                 <button class="add-to-cart btn btn-dark" type="button">Submit Review</button>
             <% end %>
 	    	</div>
 	    </div>
-    </div>
-</div>        
-	<div class="container bg-warning">
-	</div>
-	<div class="container">
-	</div>
+    </div>    
 </div>
