@@ -1,35 +1,54 @@
-<div class="mx-auto">
-  <form class="was-validated" action="<%= random_path %>" >
-
-    <div class="custom-control custom-checkbox mb-3">
-        <input type="checkbox" class="custom-control-input" id="customControlValidation1">
-        <label class="custom-control-label" for="customControlValidation1">Vegan</label>
-        <div class="">"I'm a strict vegan."</div>
-    </div>
-
-    <div class="custom-control custom-checkbox mb-3">
-        <input type="checkbox" class="custom-control-input" id="customControlValidation2">
-        <label class="custom-control-label" for="customControlValidation2">Vegetarian</label>
-        <div class="">Has milk & related products</div>
-    </div>
-
-    <div class="custom-control custom-checkbox mb-3">
-        <input type="checkbox" class="custom-control-input" id="customControlValidation3">
-        <label class="custom-control-label" for="customControlValidation3">Gluten Free</label>
-        <div class="">Omits wheat and some other grains while choosing substitutes that provide nutrients for a healthy diet.</div>
-    </div>
-
-    <div class="custom-control custom-checkbox mb-3">
-        <input type="checkbox" class="custom-control-input" id="customControlValidation4">
-        <label class="custom-control-label" for="customControlValidation4">Diary Free</label>
-        <div class="">Omits milk and all related products (butter, milk, yogurt, and cheese).</div>
-    </div>
-
-    <div class="custom-control custom-checkbox mb-3">
-        <input type="checkbox" class="custom-control-input" id="customControlValidation5">
-        <label class="custom-control-label" for="customControlValidation5">Ketogenic</label>
-        <div class="">Get more calories from protein and fat and less from carbohydrates.</div>
-    </div>
-    <input type="submit" value="Submit" class= "btn btn-lg btn-primary call-to-action">
-  </form>
+<div class="bootstrap-iso">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <form action="<%= random_path %>">
+     <div class="form-group ">
+      <label class="control-label ">
+       Dietary Restrictions
+      </label>
+      <div class=" ">
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="Vegan"/>
+         Vegan
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="Vegetarian"/>
+         Vegetarian
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="Gluten Free"/>
+         Gluten Free
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="Diary Free"/>
+         Diary Free
+        </label>
+       </div>
+       <div class="checkbox">
+        <label class="checkbox">
+         <input name="checkbox" type="checkbox" value="Ketogenic"/>
+         Ketogenic
+        </label>
+       </div>
+      </div>
+     </div>
+     <div class="form-group">
+      <div>
+       <button class="btn btn-warning " name="submit" type="submit">
+        Submit
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
 </div>

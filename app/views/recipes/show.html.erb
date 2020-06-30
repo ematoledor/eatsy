@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row bg-light">
      	<img class="img-fluid rounded mx-auto d-block"src=<%= @recipe.image %>
-			 <h1><%= @recipe.title %></h1>
+			 <h1><%= @recipe.title %> </h1>
   	</div>
 	</div>
 	<div class="container bg-secondary">
@@ -12,13 +12,13 @@
 			<div class="col bg-primary">Review</div>
 		</div>
 	  <% if user_signed_in? %>
-			<%= render 'ingredient_selection', portions: @portions %>	
+			<%= render 'ingredient_selection', portions: @portions %>
 		<% else %>
 			<%= render 'details', recipe: @recipe %>
 		<% end %>
 
 		<div class="row">
-			<<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-primary call-to-action" %>
+			<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-primary call-to-action text-center" %>
 		</div>
 	</div>
 	<div class="container bg-warning">
