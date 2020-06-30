@@ -14,6 +14,8 @@
 			<img class="img-fluid border-rounded mx-auto d-block" src=<%= portion.ingredient.image %>>
 		</div>
 		<div class="col"> <%= portion.amount %> </div>
-		<div class="col"> <%= portion.unit %></div>
+		<div class="col"> 
+			<p id="ingredient_unit">	<%= portion.unit %> </p>
+		</div>
 	</div>
 			<% end %>

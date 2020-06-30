@@ -1,4 +1,4 @@
-.ingredient_name {
+#ingredient_name {
   justify-content: center;
   align-items: center;
   font-size: 70%;
@@ -8,5 +8,20 @@
   white-space: break-spaces;
   overflow: visible;
   text-overflow: clip;
+
+}
+
+#ingredient_unit {
+
+  justify-content: center;
+  align-items: center;
+  font-size: 70%;
+  text-align: center;
+  width: 40px;
+  margin: 0;
+  white-space: break-spaces;
+  overflow: visible;
+  text-overflow: clip;
+
 
 }
