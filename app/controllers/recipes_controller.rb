@@ -39,6 +39,10 @@ class RecipesController < ApplicationController
 
     end
 
+    def thankyou
+
+    end
+
     def accountsummary
 
     end
