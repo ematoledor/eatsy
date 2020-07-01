@@ -1,28 +1,14 @@
 
-
-	<% portions.each do |portion| %>
+<% portions.each do |portion| %>	
 	<div class="row">
-				<div class="col ">
-					<input type="checkbox" class="Accept" aria-label="ingredientSelection">
-				</div>
-				<div class="col">
-					<h6><%= portion.ingredient.name %> </h6>
-				</div>
-				<div class="col"> <%= portion.amount %> </div>
-				<div class="col"> <%= portion.unit %></div>
-			</div>
-			<% end %>
-	<% portions.each do |portion| %>	
-		<div class="row">
-			<div class="col ">
-				<input type="checkbox" class="Accept" name="ingredient_<%= portion.ingredient.id%>" aria-label="ingredientSelection">
-			</div>
-			<div class="col">
-				<h6><%= portion.ingredient.name %> </h6>
-			</div>
-			<div class="col"><%= portion.ingredient.image %></div>
-			<div class="col"> <%= portion.amount %> </div>
-			<div class="col"> <%= portion.unit %></div>
+		<div class="col ">
+			<input type="checkbox" class="Accept" name="ingredient_<%= portion.ingredient.id%>" aria-label="ingredientSelection">
 		</div>
+		<div class="col">
+			<h6><%= portion.ingredient.name %> </h6>
+		</div>
+		<div class="col"> <%= portion.amount %> </div>
+		<div class="col"> <%= portion.unit %></div>
+	</div>
 	<% end %>
 

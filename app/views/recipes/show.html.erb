@@ -1,7 +1,7 @@
 <!-- app/views/offers/show.html.erb -->
-<% content_for :meta_title, "#{@recipe.title} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @recipe.summary.html_safe %>
-<% content_for :meta_image, recipe_path(@recipe.image) %>
+<%# <% content_for :meta_title, "#{@recipe.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<%# <% content_for :meta_description, @recipe.summary.html_safe %>
+<%# <% content_for :meta_image, recipe_path(@recipe.image) %> 
 
 
 
@@ -32,35 +32,28 @@
     </div>
 
     <h4 id="cat-ingredients">What ingredients do you have?</h4>
-
-    <% if user_signed_in? %>
-      <%= render 'ingredient_selection', portions: @portions %>
-    <% else %>
-      <%= render 'details', recipe: @recipe %>
-    <% end %>
+		<form action="<%=order_path%>">
+			<input type="hidden" name="recipe_id" value="<%=@recipe.id%>">
 		
-		<h4 id="cat-ingredients">What ingredients do you have?</h4>
-	  <form action="<%=order_path%>">
+		
+			<% if user_signed_in? %>
+      	<%= render 'ingredient_selection', portions: @portions %>
+    	<% else %>
+      	<%= render 'details', recipe: @recipe %>
+    	<% end %>
+		
 
-	  		<input type="hidden" name="recipe_id" value="<%=@recipe.id%>">
+
 			  
 
 			<div style="height: 50px"class="cook_now">
 				<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>
 				
+				<button type="submit" class="btn btn-lg btn-warning" id="order-now-button">
+					Order Now
+				</button>
 			
-			<button type="submit" class="btn btn-lg btn-warning" id="order-now-button">
-				Order Now
-			</button>
-		</div>
+	    </div>
 		</form>
 	</div>
-</div>
-
-
-    <div style="height: 50px"class="cook_now">
-      <%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>
-      <%= link_to "Order Now", order_path, class: "btn btn-lg btn-warning", id: "order-now-button" %>
-    </div>
-  </div>
 </div>
