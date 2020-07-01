@@ -33,9 +33,20 @@ class RecipesController < ApplicationController
     def instruction
         @recipe = Recipe.find(params[:id])
         @portions = Portion.where(recipe_id: @recipe.id)
+        
     end
 
     def order
+        
+        @recipe = Recipe.find(params[:id])
+        @portions = Portion.where(recipe_id: @recipe.id)
+        @missing_ingredients =[]
+
+        
+          
+    end
+
+    def thankyou
 
     end
 

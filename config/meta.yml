@@ -1,0 +1,5 @@
+meta_product_name: "eatsy"
+meta_title: "eatsy - Eat Simple"
+meta_description: "Select a personalized recipe and its ingredients in a few seconds "
+meta_image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -1,6 +1,91 @@
 
-<h4>Order Summary</h4>
+<link rel="stylesheet" type="text/css" href="show.css" />
+
+<div class="container-fluid">
+	<div class="row mx-auto">
+		
+		<div class="container">
+		    <div class="row text-center">
+			    <div class="col-md-5">
+                    <div class="right border">
+                        <div class="header"><b>Order Summary</b></div><br><br>
+                        
+                        
+                            <% @portions.each do |portion| %>
+                              
+                                    <div class="col text-left"><%= portion.ingredient.name %></div>
+                                    <div class="col text-right"><%= portion.ingredient.price %></div>
+                             <% end %> 
+                             
+                               
+
+                        <br><br>
+
+                        <hr>
+                            <div class="row lower">
+                                <div class="col text-left">Subtotal</div>
+                                <div class="col text-right">$ 2.6</div>
+                            </div>
+
+                            <div class="row lower">
+                                <div class="col text-left">Delivery</div>
+                                <div class="col text-right">Free</div>
+                            </div>
+
+                            <div class="row lower">
+                                <div class="col text-left"><b>Total to pay</b></div>
+                                <div class="col text-right"><b>$ 2.6</b></div>
+                            </div>
+                                
+                    
+                    <hr>
+                   
+
+                            <div class="header"><b>Payment Details</b></div>
+                                <div class="row item">
+                                    <div class="col-8">
+                                        <div class="icons"> <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> <img src="https://img.icons8.com/color/48/000000/maestro.png" /> </div>
+                                    </div>
+                                </div>
+                        <form> 
+                            <div class="row lower">
+                                <div class="col text-left"> <span>Cardholder's name:</span> </div>
+                                <div class="col text-right"><input placeholder="Linda Williams"></div> <br><br>
+                            </div>
+
+                            <div class="row lower">
+                                <div class="col text-left"> <span>Card Number:</span> </span> </div>
+                                <div class="col text-right"><input placeholder="0125 6780 4567 9909"> <br><br></div> <br><br>
+                            </div>
+
+                            <div class="row lower">
+                                <div class="col text-left"> <span>Expiry date:</span> </span> </div>
+                                <div class="col text-right"><input placeholder="YY/MM"></div> <br><br>
+                            </div>
+
+                            
+                            <div class="row lower">
+                                <div class="col text-left"> <span>CVV:</span> </div>
+                                <div class="col text-right"><input placeholder="823" id="cvv"> </div> <br><br>
+                            </div>
+                            
+                            
+                              
+                        </form>
+                    
+               
+                    
+                    <%= link_to "Place Order", thankyou_path, class: "btn btn-lg btn-primary"%>
+            
+                </div>
+            </div>
+</div>
 
 
 
-<h5>Order Successful </h5>
+		 
+		
+		
+	</div>
+
+

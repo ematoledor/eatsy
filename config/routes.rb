@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'recipes/:id/instruction', to: 'recipes#instruction', as: :instruction
   get '/accountsummary', to: 'recipes#accountsummary'
   get 'recipes/:id/order', to: 'recipes#order', as: :order
+  get 'recipes/:id/order/thankyou', to: 'recipes#thankyou', as: :thankyou
   
 end
 

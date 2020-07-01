@@ -22,7 +22,7 @@ function areChecked() {
         orderButton.style.display = 'none';
       } else {
         cookButton.style.display = 'none';
-        orderButton.style.display = 'block;'
+        orderButton.style.display = 'block';
       }
     };
 
