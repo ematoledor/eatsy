@@ -1,28 +1,27 @@
-<div class="container-fluid px-4 py-5 mx-auto">
-  <div class="row d-flex justify-content-center">
-    <div class="card border-0">
-      <div class="row set-p justify-content-center text-center">
-        <div><img class="image" src="https://i.imgur.com/lfEnSRg.jpg"> </div> <span class="fa fa-angle-left" id="left"></span> <span class="fa fa-angle-right" id="right"></span>
-          <div class="col-8">
-            <div class="row px-3">
-              <h3 class="font-weight-bold"><%=@recipe.title%></h3>
-            </div>
-            <div class="line"></div>
-            <div class="row px-3 mt-4">
-              <h5 class="text-secondary mb-1">User Reviews & Ratings</h5>
-            </div>
-            </div>
-            <% @reviews.each do |review| %>
-              <div class="col-8">
-                <div class="row px-2 mb-2">
-                  <h6 class="text-success mb-1"><strong>User Rating : </strong><%=review.rating%></h6>
-                </div>
-              <div class="row px-2 mb-3">
-                <h6 class="rating mb-0 px-2 mr-2"><%=review.description%></h6>
-            </div>
-          <% end %>
+<div class="container text-center">
+  <div class="">
+    <div><img class="image-reviews" src='<%= @recipe.image %>'>
+       <h3 class="font-weight-bold"><%=@recipe.title%></h3>
+      <div class="line"></div>
+        <div class="">
+        <h5 class="text-secondary">Ratings</h5>
         </div>
       </div>
-    </div>
+      <% @reviews.each do |review| %>
+      <div class="">
+        <div class="">
+        <%review.rating.times do %>
+        <i class="fas fa-star"></i>
+        <%end%>
+       <h5 class="text-secondary">Feedback</h5>
+      <div class="">
+      </div>
+      <h7 class="rating"><%=review.description%></h7>
+        </div>
+      </div>
+      <% end %>
   </div>
 </div>
+
+
+
