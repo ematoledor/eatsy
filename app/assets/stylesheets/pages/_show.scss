@@ -19,6 +19,10 @@
   justify-content: flex-end;
   opacity: 0.7;
   border-radius: 5px;
+  text-shadow: #000 100px 0 100px;
+  font-weight: 750;
+  color: white;
+  font-size: 5;
 }
 
 .img_title {
@@ -27,7 +31,7 @@
   font-style: normal;
   font-weight: 900;
   font-size: 18;
-  
+
 }
 
 .recipe_attrs {
@@ -35,7 +39,7 @@
   width: 100%;
   padding: 10px 10px;
   margin: 1px;
-  
+
 
 }
 

@@ -4,9 +4,9 @@
   <h1 class="mb-5 ">eatsy</h1>
           <!-- <div class="overlay"></div> -->
   <% if user_signed_in? %>
-    <%= link_to "Eat Simple", recipes_path, class: "btn btn-lg btn-warning call-to-action" %>
+    <%= link_to "eat simple", recipes_path, class: "btn btn-lg btn-warning call-to-action" %>
   <% else %>
-    <%= link_to "Eat Simple", random_path(@recipe), class: "btn btn-lg btn-warning call-to-action" %>
+    <%= link_to "eat simple", random_path(@recipe), class: "btn btn-lg btn-warning call-to-action" %>
   <% end %>
 
 </header>
