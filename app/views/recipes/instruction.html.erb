@@ -1,55 +1,50 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
             <div class="container-fluid">
                 <ul class="nav centered">
                     <li class="nav-item active">
-                        <a class="nav-link scroll" href="#Ingredients">Ingredients</a>
+                        <a class="nav-link scroll" href="#Ingredients"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#Nutrients">Nutrients</a>
+                        <a class="nav-link scroll" href="#Nutrients"></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link scroll" href="#Instructions">Instructions</a>
+                    <a class="nav-link scroll" href="#Instructions"></a>
                     </li>
                 </ul>
-        
-                <div class="jumbotron-fluid text-center one" id="Ingredients">
+                <div class="" id="Ingredients">
                     <h5>Recipe Ingredients</h5>
-                    <div class="jumbotron-fluid text-left">
-                        <% @portions.each do |portion| %>	
+                    <div class="">
+                        <% @portions.each do |portion| %>
                             <%= portion.ingredient.name %><span>,</span>
                         <% end %>
-                    </div>    
+                    </div>
                 </div>
-        
-                <div class="jumbotron-fluid text-center two" id="Nutrients">
+                <div class="" id="Nutrients">
                     <h5>Nutrients</h5>
-                    <div class="jumbotron-fluid text-left">
+                    <div class="">
                         <p>Calories :<%=@recipe.calories%> </p>
                         <p>Carbs :<%=@recipe.carbs%> </p>
                         <p>Fat :<%=@recipe.fat%> </p>
                         <p>Protein :<%=@recipe.protein%> </p>
                     </div>
             </div>
-
-                <div class="jumbotron-fluid text-center three" id="Instructions">
+                <div class="" id="Instructions">
                     <h5>Instructions</h5>
-                        <div class="jumbotron-fluid text-justify">
-                        <%=@recipe.instructions.html_safe%> 
+                        <div class="">
+                        <%=@recipe.instructions.html_safe%>
                         </div>
                 </div>
-
-                <div class="jumbotron-fluid text-center">
+                <div class="">
                     <%= link_to new_recipe_review_path(@recipe) do %>
-                        <button class="add-to-cart btn btn-dark" type="button">Submit Review</button>
+                        <button class="add-to-cart btn btn-warning" type="button">Submit Review</button>
                     <% end %>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div>
