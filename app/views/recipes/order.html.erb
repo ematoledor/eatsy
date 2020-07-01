@@ -10,19 +10,18 @@
                     <div class="right border">
                         <div class="header"><b>Order Summary</b></div><br><br>
                         
-                            <div class="row lower">
-                                <div class="col text-left">Wheat Flour</div>
-                                <div class="col text-center">Qty: 1</div>
-                                <div class="col text-right">$ 1.5</div>
-                            </div>
+                        
+                            <% @portions.each do |portion| %>
+                              
+                                    <div class="col text-left"><%= portion.ingredient.name %></div>
+                                    <div class="col text-right"><%= portion.ingredient.price %></div>
+                             <% end %> 
+                             
+                               
 
-                            <div class="row lower">
-                                <div class="col text-left">Table Salt</div>
-                                <div class="col text-center">Qty: 1</div>
-                                <div class="col text-right">$ 1.1</div>
-                            </div>
+                        <br><br>
 
-                    <hr>
+                        <hr>
                             <div class="row lower">
                                 <div class="col text-left">Subtotal</div>
                                 <div class="col text-right">$ 2.6</div>
@@ -70,10 +69,7 @@
                                 <div class="col text-right"><input placeholder="823" id="cvv"> </div> <br><br>
                             </div>
                             
-                            <div class="row lower">
-                                <div class="col text-left"> <span>Expiry date:</span> </div>
-                                <div class="col text-right"><input placeholder="12/23" id="Expiry_date"> </div> <br><br>
-                            </div>
+                            
                               
                         </form>
                     

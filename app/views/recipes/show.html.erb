@@ -22,17 +22,28 @@
 		</div>
 		
 		<h4 id="cat-ingredients">What ingredients do you have?</h4>
-	  
-		<% if user_signed_in? %>
-			<%= render 'ingredient_selection', portions: @portions %>	
-		<% else %>
-			<%= render 'details', recipe: @recipe %>
-		<% end %>
+	  <form action="<%=order_path%>">
 
-		<div style="height: 50px"class="cook_now">
-			<%= link_to "Cook Now", instruction_path, class: "cook_now_button", id: "cook-now-button" %>
-      <%= link_to "Order Now", order_path, class: "btn btn-lg btn-primary", id: "order-now-button" %>
+	  		<input type="hidden" name="recipe_id" value="<%=@recipe.id%>">
+			  
+			  
+
+
+			<% if user_signed_in? %>
+				<%= render 'ingredient_selection', portions: @portions %>	
+			<% else %>
+				<%= render 'details', recipe: @recipe %>
+			<% end %>
+
+			<div style="height: 50px"class="cook_now">
+				<%= link_to "Cook Now", instruction_path, class: "cook_now_button", id: "cook-now-button" %>
+				
+			
+			<button type="submit" class="btn btn-lg btn-primary" id="order-now-button">
+				Order Now
+			</button>
 		</div>
+		</form>
 	</div>
 </div>
 
