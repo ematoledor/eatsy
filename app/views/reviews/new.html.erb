@@ -5,7 +5,7 @@
                 <div class="comment-box text-center">
                     <h4>Add a comment</h4>
                       <%= simple_form_for [ @recipe, @review ] do |f| %>
-                        <%= f.input :description, placeholder: 'How was the Recipe?' %>
+                        <%= f.input :description, placeholder: 'How was the recipe?' %>
                         <%= f.input :rating, collection: [1,2,3,4,5] %>
                         <%= f.submit "Submit review", class: "btn btn-warning" %>
                       <% end %>
