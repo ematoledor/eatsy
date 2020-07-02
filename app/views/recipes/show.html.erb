@@ -1,7 +1,7 @@
 <!-- app/views/offers/show.html.erb -->
 <%# <% content_for :meta_title, "#{@recipe.title} is on #{DEFAULT_META["meta_product_name"]}" %>
 <%# <% content_for :meta_description, @recipe.summary.html_safe %>
-<%# <% content_for :meta_image, recipe_path(@recipe.image) %> 
+<%# <% content_for :meta_image, recipe_path(@recipe.image) %>
 
 
 
@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
   <div class="row mx-auto">
-    <div class="img_position" style="background-image: url('<%= @recipe.image %>')">
+     <div class="img_position" style=" margin-top: 10px; background-image: url('<%= @recipe.image %>')">
       <h2 class="text-center font-weight-lighter text-align-justify"><%= @recipe.title %></h2>
     </div>
   </div>
@@ -27,31 +27,35 @@
         <p class="recipe_attrs"><%= image_tag "https://api.iconify.design/whh:microwave.svg?color=orange&width=50&height=25" %><%= @recipe.prep_time %> min</p>
       </div>
       <div class="col">
-        <p class="recipe_attrs"><%= image_tag "https://api.iconify.design/ic:round-stars.svg?color=orange&width=50&height=25" %>Reviews</p>
+        <%= link_to recipe_reviews_path(@recipe) do  %>
+        <p class="recipe_attrs"><%= image_tag "https://api.iconify.design/ic:round-stars.svg?color=orange&width=50&height=25" %> <a style="text-decoration: none;"> Reviews</a></p>
+        <% end %>
       </div>
     </div>
 
     <h4 id="cat-ingredients">What ingredients do you have?</h4>
 		<form action="<%=order_path%>">
 			<input type="hidden" name="recipe_id" value="<%=@recipe.id%>">
-		
-		
+
+
 			<% if user_signed_in? %>
       	<%= render 'ingredient_selection', portions: @portions %>
     	<% else %>
       	<%= render 'details', recipe: @recipe %>
     	<% end %>
-		
 
 
-			  
+
+
 
 			<div style="height: 50px" class="d-flex align-items-center justify-content-center">
-				<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>	
+				<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>
 					<button type="submit" class="btn btn-lg btn-warning" id="order-now-button">
 						Order Now
 					</button>
-					
+          <div class= "text-center" style="padding-left: 10px;">
+        <%= link_to "Next Recipe", random_path(@recipe), class: "btn btn-lg btn-warning" %>
+       </div>
 			</div>
 		</form>
 	</div>

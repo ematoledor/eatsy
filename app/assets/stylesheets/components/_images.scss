@@ -3,3 +3,28 @@
 width: 100%;
 
 }
+
+.img-container {
+
+text-align: center;
+display: block;
+}
+
+
+.img-index {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=931&q=80");
+  height: 100vh;
+  color: white;
+  background-size: cover; background-repeat: no-repeat;
+  zoom: 1.3;
+  text-shadow: #000 100px 10 100px;
+  }
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 70vh; /* These two lines are counted as one :-)       */
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+}
+
