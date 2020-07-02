@@ -1,23 +1,20 @@
 
 <link rel="stylesheet" type="text/css" href="show.css" />
 
-<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
-	<div class="modal-content">
+<div class="dietary-chekbox" role="document">
+	<div class="">
   	<div class="card-body text-center">
 			<div class="header"><b>Order Summary</b></div><br><br>                  
         <% @ingredients.each do |ingredient| %> 
-
           <div class="col text-left"><%= ingredient.name %></div>
-            <div class="col text-right"><%= ingredient.price %></div>
+            <div class="col text-right">$ <%= ingredient.price %></div>
         <% end %>
-        
-        
       </div>
     </div>
   </div>
 </div>
-<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
-	<div class="modal-content">
+<div class="dietary-chekbox" role="document">
+	<div class="">
   	<div class="card-body text-center">
 			 <div class="row lower">
           <div class="col text-left">Subtotal</div>
@@ -34,37 +31,41 @@
     </div>
   </div>
 </div>
-<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
-	<div class="modal-content">
+<div class="dietary-chekbox" role="document">
+	<div class="">
   	<div class="card-body text-center">
       <div class="header"><b>Payment Details</b></div>
         <div class="row item">
           <div class="col-8">
-            <div class="icons"> <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /></div>
-          </div>  
+            <div class="img-container">
+              <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />  <img src="https://api.iconify.design/logos:discover.svg?width=50&height=25" />  <img src="https://api.iconify.design/logos:apple-pay.svg?width=50&height=25" /></div>
+            </div>
+          </div>
         </div>
-        <form> 
-          <div class="row lower">
-            <div class="col text-left"> <span>Cardholder's name:</span> </div>
-            <div class="col text-right"><input placeholder="Linda Williams"></div> <br><br>
-          </div>
-          <div class="row lower">
-            <div class="col text-left"> <span>Card Number:</span> </span> </div>
-            <div class="col text-right"><input placeholder="0125 6780 4567 9909"> <br><br></div> <br><br>
-          </div>
-          <div class="row lower">
-            <div class="col text-left"> <span>Expiry date:</span> </span> </div>
-            <div class="col text-right"><input placeholder="YY/MM"></div> <br><br>
-          </div>          
-          <div class="row lower">
-              <div class="col text-left"> <span>CVV:</span> </div>
-              <div class="col text-right"><input placeholder="823" id="cvv"> </div> <br><br>
+        <form>
+          <div class="card-body text-center">
+            <div class="row lower">
+              <div class="col text-left"> <span>Cardholder's name:</span> </div>
+              <div class="col text-right"><input placeholder="Linda Williams"></div> <br><br>
+            </div>
+            <div class="row lower">
+              <div class="col text-left"> <span>Card Number:</span> </span> </div>
+              <div class="col text-right"><input placeholder="0125 6780 4567 9909"> <br><br></div> <br><br>
+            </div>
+            <div class="row lower">
+              <div class="col text-left"> <span>Expiration date:</span> </span> </div>
+              <div class="col text-right"><input placeholder="YY/MM"></div> <br><br>
+            </div>
+            <div class="row lower">
+                <div class="col text-left"> <span>CVV:</span> </div>
+                <div class="col text-right"><input placeholder="823" id="cvv"> </div> <br><br>
+            </div>
           </div>
         </form>
       </div>
       </div>
   </div>
 </div>
-<div class="d-flex justify-content-center align-items-center">                        
+<div class="d-flex justify-content-center align-items-center">
 <%= link_to "Place Order", thankyou_path, class: "btn btn-lg btn-warning"%>
 </div>
