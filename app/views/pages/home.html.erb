@@ -1,7 +1,7 @@
 
 
 <header class="masthead text-white text-center d-flex justify-content-center align-items-center flex-column">
-  <h1 class="mb-5 ">eatsy</h1>
+  <%=image_tag("logo-eatsy.png")%>
           <!-- <div class="overlay"></div> -->
   <% if user_signed_in? %>
     <%= link_to "eat simple", recipes_path, class: "btn btn-lg btn-warning call-to-action" %>

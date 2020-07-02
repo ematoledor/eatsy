@@ -1,48 +1,51 @@
-<div class="bootstrap-iso dietary-checkbox">
-    <form action="<%= random_path %>">
-     <div class="form-group ">
-      <label class="control-label">
-       Dietary Restrictions
-      </label>
-      <div class=" ">
-       <div class="checkbox">
-        <label class="checkbox">
-         <input name="checkbox" type="checkbox" value="Vegan"/>
-         Vegan
-        </label>
-       </div>
-       <div class="checkbox">
-        <label class="checkbox">
-         <input name="checkbox" type="checkbox" value="Vegetarian"/>
-         Vegetarian
-        </label>
-       </div>
-       <div class="checkbox">
-        <label class="checkbox">
-         <input name="checkbox" type="checkbox" value="Gluten Free"/>
-         Gluten Free
-        </label>
-       </div>
-       <div class="checkbox">
-        <label class="checkbox">
-         <input name="checkbox" type="checkbox" value="Diary Free"/>
-         Diary Free
-        </label>
-       </div>
-       <div class="checkbox">
-        <label class="checkbox">
-         <input name="checkbox" type="checkbox" value="Ketogenic"/>
-         Ketogenic
-        </label>
-       </div>
-      </div>
-     </div>
-     <div class="form-group">
-      <div>
-       <button class="btn btn-warning " name="submit" type="submit">
-        Submit
-       </button>
-      </div>
-     </div>
-    </form>
+<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
+  <div class="modal-content d-flex justify-content-center align-items-center">
+   	<div class="card-body text-center">
+      <form action="<%= random_path %>">
+        <div class="form-group ">
+          <label class="control-label">
+            Dietary Restrictions
+          </label>
+          <div class="checkbox">
+            <label class="checkbox">
+            <input name="checkbox" type="checkbox" value="Vegan"/>
+            Vegan
+            </label>
+          </div>
+          <div class="checkbox">
+            <label class="checkbox">
+            <input name="checkbox" type="checkbox" value="Vegetarian"/>
+            Vegetarian
+            </label>
+            </div>
+          <div class="checkbox">
+            <label class="checkbox">
+            <input name="checkbox" type="checkbox" value="Gluten Free"/>
+            Gluten Free
+            </label>
+          </div>
+          <div class="checkbox">
+            <label class="checkbox">
+            <input name="checkbox" type="checkbox" value="Diary Free"/>
+            Diary Free
+            </label>
+          </div>
+          <div class="checkbox">
+            <label class="checkbox">
+            <input name="checkbox" type="checkbox" value="Ketogenic"/>
+            Ketogenic
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+          <button class="btn btn-warning " name="submit" type="submit">
+            Submit
+          </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+

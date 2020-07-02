@@ -19,7 +19,7 @@
 
 
   <div class="container">
-    <div class="row text-center">
+    <div class="row card-body text-center">
       <div class="col">
         <p class="recipe_attrs"><%= image_tag "https://api.iconify.design/emojione-monotone:pot-of-food.svg?color=orange&width=50&height=25" %><%=@recipe.servings%></p>
       </div>
@@ -46,14 +46,13 @@
 
 			  
 
-			<div style="height: 50px"class="cook_now">
-				<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>
-				
-				<button type="submit" class="btn btn-lg btn-warning" id="order-now-button">
-					Order Now
-				</button>
-			
-	    </div>
+			<div style="height: 50px" class="d-flex align-items-center justify-content-center">
+				<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>	
+					<button type="submit" class="btn btn-lg btn-warning" id="order-now-button">
+						Order Now
+					</button>
+					
+			</div>
 		</form>
 	</div>
 </div>
