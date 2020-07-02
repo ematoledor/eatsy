@@ -23,7 +23,7 @@
 			 <div class="row lower">
           <div class="col text-left">Subtotal</div>
 
-          <div class="col text-right"><%= @total %></div>
+          <div class="col text-right">$&nbsp;<%= @total.round(2) %></div>
         </div>
         <div class="row lower">
           <div class="col text-left">Delivery</div>
@@ -32,7 +32,7 @@
         <div class="row lower">
           <div class="col text-left"><b>Total to pay</b></div>
 
-          <div class="col text-right"><b><%= @total %></b></div>
+          <div class="col text-right">$&nbsp;<b><%= @total.round(2) %></b></div>
 
         </div>
     </div>
