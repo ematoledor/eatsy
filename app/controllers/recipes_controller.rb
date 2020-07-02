@@ -34,10 +34,37 @@ class RecipesController < ApplicationController
 	end
 
   def order
-        
+    params.permit!  
   	@recipe = Recipe.find(params[:id])
     @portions = Portion.where(recipe_id: @recipe.id)
-    @missing_ingredients =[]  
+    
+    selected_ingredients = params.to_h.filter do |key,value|
+      key.start_with?('ingredient_')
+    end
+    
+    # Ingredients selected by the user
+    temp = (selected_ingredients.map {|ingredient, _| ingredient.gsub('ingredient_', '')}).map(&:to_i)
+    
+    
+    # Ingredients which are part of the Recipe#Portion
+    @actual_ingredients = @portions.map do |portion|
+      portion.ingredient.id
+    end
+
+    # Ingredients which have to be ordered
+    #@ingredients_to_order = @actual_ingredients.reject{|ingredient| temp.include?(id:)}
+
+    ingredients_to_order = @actual_ingredients.reject {|ingredient| temp.include?(ingredient)}
+    
+    # instantiate a Variable so as to be used in order.html.erb
+    @ingredients = Ingredient.where(id: ingredients_to_order)
+
+    total = @ingredients.reduce(0) { |sum, ingredient| sum + ingredient.price }
+    @total = total
+    
+
+
+
   end
 
   def thankyou
@@ -47,6 +74,9 @@ class RecipesController < ApplicationController
   def accountsummary
 
   end
+
+  
+
 
   private
 
