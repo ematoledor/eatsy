@@ -4,18 +4,12 @@
 <div class="dietary-chekbox" role="document">
 	<div class="">
   	<div class="card-body text-center">
-<<<<<<< HEAD
-			<div class="header"><b>Order Summary</b></div><br><br>
-        <% @portions.each do |portion| %>
-          <div class="col text-left"><%= portion.ingredient.name %></div>
-            <div class="col text-right">$ <%= portion.ingredient.price %></div>
-=======
+      
 			<div class="header"><b>Order Summary</b></div><br><br>                  
         <% @ingredients.each do |ingredient| %> 
-
           <div class="col text-left"><%= ingredient.name %></div>
-            <div class="col text-right"><%= ingredient.price %></div>
->>>>>>> 31c84afa1c412b4a13f036475e5433d23a7d92cf
+            <div class="col text-right">$ <%= ingredient.price %></div>
+
         <% end %>
         
         
@@ -28,11 +22,8 @@
   	<div class="card-body text-center">
 			 <div class="row lower">
           <div class="col text-left">Subtotal</div>
-<<<<<<< HEAD
-          <div class="col text-right">$ 2.60</div>
-=======
+
           <div class="col text-right"><%= @total %></div>
->>>>>>> 31c84afa1c412b4a13f036475e5433d23a7d92cf
         </div>
         <div class="row lower">
           <div class="col text-left">Delivery</div>
@@ -40,11 +31,9 @@
         </div>
         <div class="row lower">
           <div class="col text-left"><b>Total to pay</b></div>
-<<<<<<< HEAD
-          <div class="col text-right"><b>$ 25.42</b></div>
-=======
+
           <div class="col text-right"><b><%= @total %></b></div>
->>>>>>> 31c84afa1c412b4a13f036475e5433d23a7d92cf
+
         </div>
     </div>
   </div>
