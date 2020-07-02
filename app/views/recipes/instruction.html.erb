@@ -1,50 +1,46 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-6">
-            <div class="container-fluid">
-                <ul class="nav centered">
-                    <li class="nav-item active">
-                        <a class="nav-link scroll" href="#Ingredients"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#Nutrients"></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link scroll" href="#Instructions"></a>
-                    </li>
-                </ul>
-                <div class="" id="Ingredients">
-                    <h5>Recipe Ingredients</h5>
-                    <div class="">
-                        <% @portions.each do |portion| %>
-                            <%= portion.ingredient.name %><span>,</span>
-                        <% end %>
-                    </div>
-                </div>
-                <div class="" id="Nutrients">
-                    <h5>Nutrients</h5>
-                    <div class="">
-                        <p>Calories :<%=@recipe.calories%> </p>
-                        <p>Carbs :<%=@recipe.carbs%> </p>
-                        <p>Fat :<%=@recipe.fat%> </p>
-                        <p>Protein :<%=@recipe.protein%> </p>
-                    </div>
-            </div>
-                <div class="" id="Instructions">
-                    <h5>Instructions</h5>
-                        <div class="">
-                        <%=@recipe.instructions.html_safe%>
-                        </div>
-                </div>
-                <div class="">
-                    <%= link_to new_recipe_review_path(@recipe) do %>
-                        <button class="add-to-cart btn btn-warning" type="button">Rate Now</button>
-                    <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="col">
+	<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
+		<div class="modal-content">
+			<div class="card-body text-center">
+				<h5>Recipe Ingredients
+				</h5>
+				<div class="">
+				<% @portions.each do |portion| %>
+					<%= portion.amount %>	<%= portion.unit %>
+					<%= portion.ingredient.name %><span>,</span>
+					
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
-        </div>
+<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
+	<div class="modal-content">
+  	<div class="card-body text-center">
+			<div class="" id="Nutrients">
+	  		<h5>Nutrients</h5>
+			</div>
+  		<div class="">
+	 			<p>Calories :<%=@recipe.calories%> </p>
+     		<p>Carbs :<%=@recipe.carbs%> </p>
+      	<p>Fat :<%=@recipe.fat%> </p>
+   			<p>Protein :<%=@recipe.protein%> </p>
+  		</div>
     </div>
+  </div>
+</div>
+<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
+	<div class="modal-content">
+  	<div class="card-body text-center">
+			<h5>Instructions</h5>
+      <div class="">
+				<%=@recipe.instructions.html_safe%>
+   		</div>
+    </div>
+  </div>
+</div>
+<div class="d-flex align-items-center justify-content-center">
+	<%= link_to new_recipe_review_path(@recipe) do %>
+		<button class="add-to-cart btn btn-warning" type="button">Rate Now</button>
+	<% end %>
 </div>
