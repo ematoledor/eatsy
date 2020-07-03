@@ -47,24 +47,13 @@ spoonacular_recipes_params.each do |sr_params|
       
     )
   end
+    user = User.all.shuffle[0]
+    Review.create!(
+      description:  "Easy to cook and delicious.",
+      rating:       4,
+      recipe:       recipe,
+      user:         user
+    )          
 
-  # recipe_source_id = sr_params["id"]
-  # url_nutri = "https://api.spoonacular.com/recipes/#{recipe_source_id}/nutritionWidget.json&apiKey=#{SPOONACULAR_KEY}"
-  # nutri_params = HTTParty.get(url_nutri)
-
-
-  # nutri_params.each do |attr|
-  #   recipe_id = sr_params["id"]
-  #   recipe = Recipe.find_by(source_id: sr_params["id"])
-    
-  #   binding.pry
-    
-  #   recipe.update!( 
-  #   calories:    attr["calories"],
-  #   carbs:       attr["carbs"],
-  #   fat:         attr["fat"],
-  #   protein:     attr["protein"]
-  #   )
-  # end
 end
 
