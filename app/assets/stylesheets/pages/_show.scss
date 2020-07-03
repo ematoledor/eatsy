@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0.7;
+  // opacity: 1;
   border-radius: 5px;
   text-shadow: #000 100px 0 100px;
   font-weight: 750;
@@ -30,7 +30,8 @@
   color: white;
   font-style: normal;
   font-weight: 900;
-  font-size: 18;
+  font-size: 10;
+  text-shadow: #000 100px 0 100px;
 
 }
 

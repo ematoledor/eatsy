@@ -1,23 +1,23 @@
 
 <link rel="stylesheet" type="text/css" href="show.css" />
 
-<div class="dietary-chekbox" role="document">
+<div class="container" role="document">
 	<div class="">
   	<div class="card-body text-center">
-      
-			<div class="header"><b>Order Summary</b></div><br><br>                  
-        <% @ingredients.each do |ingredient| %> 
+			<div class="header">
+        <h3>Order Summary</h3>
+      </div><br><br>
+        <% @ingredients.each do |ingredient| %>
+        <div class="row">
           <div class="col text-left"><%= ingredient.name %></div>
             <div class="col text-right">$ <%= ingredient.price %></div>
-
+        </div>
         <% end %>
-        
-        
       </div>
     </div>
   </div>
 </div>
-<div class="dietary-chekbox" role="document">
+<div class="container" role="document">
 	<div class="">
   	<div class="card-body text-center">
 			 <div class="row lower">
@@ -26,11 +26,11 @@
           <div class="col text-right">$&nbsp;<%= @total.round(2) %></div>
         </div>
         <div class="row lower">
-          <div class="col text-left">Delivery</div>
+          <div class="col text-left">2-hour delivery</div>
           <div class="col text-right">Free</div>
         </div>
         <div class="row lower">
-          <div class="col text-left"><b>Total to pay</b></div>
+          <div class="col text-left"><b>Total</b></div>
 
           <div class="col text-right">$&nbsp;<b><%= @total.round(2) %></b></div>
 
@@ -38,14 +38,16 @@
     </div>
   </div>
 </div>
-<div class="dietary-chekbox" role="document">
+<div class="" role="document">
 	<div class="">
   	<div class="card-body text-center">
-      <div class="header"><b>Payment Details</b></div>
+      <div class="header">
+        <h3>Payment Details</h3>
+      </div>
         <div class="row item">
-          <div class="col-8">
+          <div class="col-12">
             <div class="img-container">
-              <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />  <img src="https://api.iconify.design/logos:discover.svg?width=50&height=25" />  <img src="https://api.iconify.design/logos:apple-pay.svg?width=50&height=25" /></div>
+                <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />  <img src="https://api.iconify.design/logos:discover.svg?width=50&height=25" />  <img src="https://api.iconify.design/logos:apple-pay.svg?width=50&height=25" /></div>
             </div>
           </div>
         </div>
@@ -73,6 +75,6 @@
       </div>
   </div>
 </div>
-<div class="d-flex justify-content-center align-items-center">
+<div class="button-navbar d-flex justify-content-center align-items-center">
 <%= link_to "Place Order", thankyou_path, class: "btn btn-lg btn-warning"%>
 </div>
