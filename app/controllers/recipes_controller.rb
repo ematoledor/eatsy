@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+  
 
     @review = Review.where(recipe_id: @recipe.id)
     @portions = Portion.where(recipe_id: @recipe.id)
@@ -14,8 +15,35 @@ class RecipesController < ApplicationController
   end
 
   def random
-    @recipe = Recipe.all.shuffle[0]
-  	redirect_to recipe_path(@recipe)
+    #Old logic for picking random recipes
+    #@recipe = Recipe.all.shuffle[0]
+    @recipe = Recipe.all.sample
+    
+
+    if params[:vegan]
+      @recipe = Recipe.where(vegan: true).sample
+    end
+
+    if params[:vegetarian]
+      @recipe = Recipe.where(vegetarian: true).sample
+    end
+
+    if params[:gluten_free]
+      @recipe = Recipe.where(gluten_free: true).sample
+    end
+
+    if params[:dairy_free]
+      @recipe = Recipe.where(dairy_free: true).sample
+    end
+
+    if params[:ketogenic]
+      @recipe = Recipe.where(ketogenic: true).sample
+    end
+    
+    
+
+    redirect_to recipe_path(@recipe, params.permit(params.keys).to_h)
+    
   end
 
   def new
@@ -83,4 +111,5 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:title, :instructions, :prep_time, :vegetarian, :vegan, :gluten_free, :dairy_free, :very_healthy, :ketogenic, :servings, :source_id, :summary, images: [])
   end
+
 end

@@ -48,7 +48,7 @@
 						Order Now
 					</button>
           <div class= "text-center" style="padding-left: 10px;">
-        <%= link_to "Next Recipe", random_path(@recipe), class: "btn btn-lg btn-warning" %>
+        <%= link_to "Next Recipe", random_path(@recipe, params.permit(params.keys).to_h), class: "btn btn-lg btn-warning" %>
        </div>
 			</div>
 		</form>

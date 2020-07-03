@@ -9,7 +9,7 @@
 					<div class="col">
 						<h6><%= portion.ingredient.name %> </h6>
 					</div>
-					<div class="col"> <%= portion.amount %> </div>
+					<div class="col"> <%= truncate(portion.amount, :length =>5) %> </div>
 					<div class="col"> <%= portion.unit %></div>
 				</div>
 			<% end %>
