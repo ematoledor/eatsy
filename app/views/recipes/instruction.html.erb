@@ -1,8 +1,8 @@
-<div class="img-index2">
-  <div class="dietary-chekbox" role="document">
+<div class="img-index4">
+  <div class="" role="document">
     <div class="">
       <div class="card-body">
-        <h3>Ingredients</h3>
+        <h3>Ingredients:</h3>
         <div class="col 4">
           <% @portions.each do |portion| %>
           <%= portion.amount %> <%= portion.unit %>
@@ -16,7 +16,7 @@
   <div class="">
     <div class="card-body">
       <div class="" id="Nutrients">
-        <h3>Nutrients</h3>
+        <h3>Nutrients:</h3>
       </div>
       <div class="col-4">
         <p>Calories :<%=@recipe.calories%> </p>
@@ -30,7 +30,7 @@
 <div class="dietary-chekbox" role="document">
   <div class="">
     <div class="card-body">
-      <h3>Instructions</h3>
+      <h3>Instructions:</h3>
       <div class="col-12">
         <%=@recipe.instructions.html_safe%>
       </div>
