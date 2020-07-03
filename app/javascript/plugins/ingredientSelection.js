@@ -26,6 +26,19 @@ function areChecked() {
       }
     };
 
+    $('#select-all').click(function(event) {   
+      if(this.checked) {
+        $(':checkbox').each(function() {
+              this.checked = true;                        
+          });
+      } else {
+          $(':checkbox').each(function() {
+              this.checked = false;                       
+          });
+      }
+
+      handleCheckboxChange()
+    });	
 
     function listenToCheckboxes() {
         // Get all the checkboxes in your HTML.
@@ -35,9 +48,12 @@ function areChecked() {
           checkboxElement.addEventListener('change', handleCheckboxChange);
         });
 
-
       };
 
 
 
       export { listenToCheckboxes }
+
+
+
+  
