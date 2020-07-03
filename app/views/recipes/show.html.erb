@@ -6,8 +6,8 @@
 
 <div class="container-fluid">
   <div class="row mx-auto">
-     <div class="img_position" style=" margin-top: 10px; background-image: url('<%= @recipe.image %>')">
-      <h2 class="text-center font-weight-lighter text-align-justify"><%= @recipe.title %></h2>
+     <div class="img_position" style=" margin-top: 20px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @recipe.image %>')">
+      <h3 class="text-center font-weight-lighter text-align-justify"><%= @recipe.title %></h3>
     </div>
   </div>
 
@@ -21,13 +21,19 @@
         <p class="recipe_attrs"><%= image_tag "https://api.iconify.design/whh:microwave.svg?color=orange&width=50&height=25" %><%= @recipe.prep_time %> min</p>
       </div>
       <div class="col">
-        <%= link_to recipe_reviews_path(@recipe) do  %>
-        <p class="recipe_attrs"><%= image_tag "https://api.iconify.design/ic:round-stars.svg?color=orange&width=50&height=25" %> <a style="text-decoration: none;"> Reviews</a></p>
-        <% end %>
+        <p class="recipe_attrs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><a style="text-decoration: none;">Rating</a></p>
       </div>
     </div>
+      <div class= "row" style="padding-left: 10px;">
+        <div class=" text-center col">
+          <%= link_to "Next recipe", random_path(@recipe, params.permit(params.keys).to_h), class: "btn-sm btn btn-warning" %>
+        </div>
+        <div class=" text-center col">
+          <%= link_to "View reviews", recipe_reviews_path(@recipe), class: "btn-sm btn btn-warning" %>
+        </div>
+      </div>
 
-    <h4 id="cat-ingredients">What ingredients do you have?</h4>
+    <h5 id="cat-ingredients">What ingredients do you have?</h5>
 		<form action="<%=order_path%>">
 			<input type="hidden" name="recipe_id" value="<%=@recipe.id%>">
 
@@ -42,15 +48,12 @@
 
 
 
-			<div style="height: 50px" class="d-flex align-items-center justify-content-center">
-				<%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>
+		    <div style="height: 50px" class=" button-navbar d-flex align-items-center justify-content-center">
+				  <%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>
 					<button type="submit" class="btn btn-lg btn-warning" id="order-now-button">
 						Order Now
-					</button>
-          <div class= "text-center" style="padding-left: 10px;">
-        <%= link_to "Next Recipe", random_path(@recipe, params.permit(params.keys).to_h), class: "btn btn-lg btn-warning" %>
+          </button>
        </div>
-			</div>
 		</form>
 	</div>
 </div>

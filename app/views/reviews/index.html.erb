@@ -1,7 +1,7 @@
 <div class="container text-center">
   <div class="">
-    <div><img class="image-reviews" src='<%= @recipe.image %>'>
-       <h3 class="font-weight-bold"><%=@recipe.title%></h3>
+    <div><img class="image-reviews"style="margin-top: 20px;" src='<%= @recipe.image %>'>
+       <h4 class="font-weight-bold"><%=@recipe.title%></h4>
       <div class="line"></div>
         <div class="">
         <h5 class="text-secondary">Ratings</h5>
@@ -23,7 +23,7 @@
   </div>
 </div>
 
-  <div class= "text-center" style="margin-top: 20%;">
+  <div class= "text-center" style="margin-top: 10%;">
     <%= link_to "Next Recipe", recipes_path, class: "btn btn-lg btn-warning" %>
   </div>
 
