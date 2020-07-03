@@ -29,7 +29,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import {listenToCheckboxes} from '../plugins/ingredientSelection.js';
+import {listenToCheckboxes, checkAllTrue} from '../plugins/ingredientSelection.js';
 
 import { initStarRating } from '../plugins/init_star_rating';
 
@@ -39,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   listenToCheckboxes();
   initStarRating();
+  checkAllTrue();
 });
