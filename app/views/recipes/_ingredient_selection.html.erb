@@ -1,22 +1,26 @@
-<div class="modal-dialog modal-dialog-centered dietary-chekbox" role="document">
-	<div class="modal-content">
+<div class="" role="document">
+	<div class="">
   	<div class="card-body text-center">
-			<% portions.each do |portion| %>	
+      <% portions.each do |portion| %>
 				<div class="row">
 					<div class="col	">
 						<input type="checkbox" class="Accept" name="ingredient_<%= portion.ingredient.id%>" aria-label="ingredientSelection">
 					</div>
 					<div class="col">
 						<h6><%= portion.ingredient.name %> </h6>
-					</div>
-					<div class="col"> <%= portion.amount %> </div>
+				  </div>
+					<div class="col"> <%= portion.amount.to_f.round(2) %> </div>
 					<div class="col"> <%= portion.unit %></div>
 				</div>
 			<% end %>
-			<input type="checkbox" name="select-all" id="select-all">
-			<script>
-				
-			</script>
+      <div class="row">
+        <div class="col-3 ">
+          <input type="checkbox" name="select-all" id="select-all">
+        </div>
+        <div class="col-3">
+          <strong> Select all</strong>
+        </div>
+      </div>
 		</div>
 	</div>
 </div>
