@@ -26,7 +26,7 @@
     </div>
       <div class= "row" style="padding-left: 10px;">
         <div class=" text-center col">
-          <%= link_to "Next recipe", random_path(@recipe), class: "btn-sm btn btn-warning" %>
+          <%= link_to "Next recipe", random_path(@recipe, params.permit(params.keys).to_h), class: "btn-sm btn btn-warning" %>
         </div>
         <div class=" text-center col">
           <%= link_to "View reviews", recipe_reviews_path(@recipe), class: "btn-sm btn btn-warning" %>
@@ -52,7 +52,7 @@
 				  <%= link_to "Cook Now", instruction_path, class: "btn btn-lg btn-warning", id: "cook-now-button" %>
 					<button type="submit" class="btn btn-lg btn-warning" id="order-now-button">
 						Order Now
-					</button>
+          </button>
        </div>
 		</form>
 	</div>
