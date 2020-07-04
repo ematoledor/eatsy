@@ -5,7 +5,7 @@
         <h3>Ingredients:</h3>
         <div class="col 4">
           <% @portions.each do |portion| %>
-          <%= portion.amount %> <%= portion.unit %>
+          <%= portion.amount.to_f.round(1) %> <%= portion.unit %>
           <%= portion.ingredient.name %><span>,</span>
         <% end %>
       </div>
@@ -20,9 +20,9 @@
       </div>
       <div class="col-4">
         <p>Calories :<%=@recipe.calories%> </p>
-        <p>Carbs :<%=@recipe.carbs%> </p>
-        <p>Fat :<%=@recipe.fat%> </p>
-        <p>Protein :<%=@recipe.protein%> </p>
+        <p>Carbs :<%=@recipe.carbs%>g </p>
+        <p>Fat :<%=@recipe.fat%>g </p>
+        <p>Protein :<%=@recipe.protein%>g </p>
       </div>
     </div>
   </div>
