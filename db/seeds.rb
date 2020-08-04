@@ -1,7 +1,4 @@
 
-Recipe.destroy_all
-Ingredient.destroy_all
-
 SPOONACULAR_KEY = "9242419348644293bdd2777dbdf49ac5"
 url = "https://api.spoonacular.com/recipes/random?number=100&apiKey=#{SPOONACULAR_KEY}&tag=italian"
 recipes_request = HTTParty.get(url)
